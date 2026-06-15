@@ -6,8 +6,23 @@
 # "number x i = result"
 # (Example: "3 x 4 = 12")
 
-def multiplication_table(number: int) -> list[str]:
-    result = []
-    for i in range(1, 11):
-        result.append(f"{number} x {i} = {number * i}") 
-    return result
+def generate_invoice(customer_name: str = "Guest", *items: str, **charges: float) -> str:
+    total = 0.0
+    invoice_lines = [f"Invoice for {customer_name}:"]
+ 
+    if items:
+        invoice_lines.append("Items:")
+        for item in items:
+            invoice_lines.append(f"- {item}")
+ 
+    if charges:
+        invoice_lines.append("Charges:")
+        for label, amount in charges.items():
+            invoice_lines.append(f"{label.capitalize()}: {amount}")
+            total += amount
+ 
+    invoice_lines.append(f"Total Amount Due: {total}")
+    return "\\n".join(invoice_lines)
+
+generate_invoice("Amit", "Burger", "Fries", tax=50.0, service=20.00)
+print(generate_invoice)

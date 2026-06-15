@@ -12,3 +12,4 @@ orders = [100, 15, 200]
 for price in orders:
     final_amount = add_vat(price, 10)
     print(f"Original: {price}, final w/ VAT: {final_amount}")
+    
