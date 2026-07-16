@@ -30,4 +30,4 @@ class SmartDevice:
  
     def get_status(self):
         status = "ON" if self.power_status else "OFF"
-        print f"{self.device_name} is {status} - {self.brand}"
+        return f"{self.device_name} is {status} - {self.brand}"
