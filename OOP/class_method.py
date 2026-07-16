@@ -4,7 +4,7 @@ class FoodOrder:
         self.spiceness = spiceness
         self.size = size
     def __str__(self):
-        return f"Pedido: {self.food_type} | Pimenta: {self.spiceness} | Tamanho: {self.size}"
+        return f"Type: {self.food_type} | Spiceness: {self.spiceness} | Size: {self.size}"
 
     @classmethod 
     def from_dict(cls, order_data):
@@ -31,3 +31,4 @@ order1 = FoodOrder.from_dict({"food_type": "Brazilian",
 order2 = FoodOrder.from_string("Greek-Low-Small")
 
 print(order1)
+print(order2)
